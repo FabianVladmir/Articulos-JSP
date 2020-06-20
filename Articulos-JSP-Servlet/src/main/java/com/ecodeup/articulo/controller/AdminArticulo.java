@@ -108,13 +108,13 @@ public class AdminArticulo extends HttpServlet {
     }
 
     private void nuevo(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException, SQLException {
-        RequestDispatcher dispatcher = request.getRequestDispatcher("/vista/register.jsp");
+        RequestDispatcher dispatcher = request.getRequestDispatcher("/NaN/register.jsp");
         dispatcher.forward(request, response);
     }
 
 
     private void mostrar(HttpServletRequest request, HttpServletResponse response) throws SQLException, IOException , ServletException{
-        RequestDispatcher dispatcher = request.getRequestDispatcher("/vista/mostrar.jsp");
+        RequestDispatcher dispatcher = request.getRequestDispatcher("/NaN/mostrar.jsp");
         List<Articulo> listaArticulos= articuloDAO.listarArticulos();
         request.setAttribute("lista", listaArticulos);
         dispatcher.forward(request, response);
@@ -124,7 +124,7 @@ public class AdminArticulo extends HttpServlet {
         Articulo articulo = articuloDAO.obtenerPorId(Integer.parseInt(request.getParameter("id")));
         request.setAttribute("articulo", articulo);
 
-        RequestDispatcher dispatcher = request.getRequestDispatcher("/vista/editar.jsp");
+        RequestDispatcher dispatcher = request.getRequestDispatcher("/NaN/editar.jsp");
         dispatcher.forward(request, response);
     }
 
